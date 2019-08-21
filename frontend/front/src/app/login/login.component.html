@@ -1,0 +1,22 @@
+<div>
+  <br>
+  <div class="bg-danger" *ngIf="loginFailed">
+    <p class="text-white">
+      Invalid Username and password
+    </p>
+  </div>
+  <div class="container">
+    <h2>Login</h2>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="username">UserName:</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter Your Username" name="username" [(ngModel)]="username">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="Enter Your password" name="pwd" [(ngModel)]="password">
+      </div>
+      <button type="submit" class="btn btn-success" (click)="login()">Login</button>
+    </form>
+  </div>
+</div>

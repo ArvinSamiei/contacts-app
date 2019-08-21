@@ -1,0 +1,17 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div>
+      <a href="http://arvinsamiei.mihanblog.com" class="navbar-brand" target="_blank">Arvin Samiei</a>
+    </div>
+
+    <ul class="navbar-nav">
+      <li><a routerLink="/" class="nav-link">Home</a></li>
+      <li *ngIf="isLoggedIn()"><a routerLink="/contacts" class="nav-link">Contacts</a></li>
+    </ul>
+
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+      <li *ngIf="!isLoggedIn()"><a routerLink="/login" class="nav-link">Login</a></li>
+      <li *ngIf="isLoggedIn()"><a (click)="logOut()" routerLink="/login" class="nav-link">Logout</a></li>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,39 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+<div class="scrollbar container" id="style-2">
+  <!-- contacts card -->
+  <div class="card card-default" id="card_contacts">
+    <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
+      <ul class="list-group pull-down">
+        <li class="list-group-item active" *ngFor="let contactComponent of contacts"
+            title="{{ contactComponent.contact.fullName() }}" value="{{ contactComponent.contact.fullName() }}">
+          <div class="row w-100">
+            <div class="col-12 col-sm-6 col-md-3 px-0">
+              <img src="{{ contactComponent.contact.imagePath() }}" alt="{{ contactComponent.contact.fullName() }}"
+                    style="width: 150px;">
+            </div>
+            <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">
+              <span class="material-icons" id="{{ contactComponent.contact.fullName() }}">person</span>
+              <label class="name lead"
+                     for="{{ contactComponent.contact.fullName() }}">{{ contactComponent.contact.fullName() }}</label>
+              <br>
+
+              <span class="material-icons" id="{{ contactComponent.contact.phoneNumber }}">phone</span>
+              <label class="name lead"
+                     for="{{ contactComponent.contact.phoneNumber }}">{{ contactComponent.contact.phoneNumber }}</label>
+            </div>
+
+            <div>
+              <button type="button" class="btn btn-success btn-lg">Edit</button>
+              <button type="button" class="btn btn-danger btn-lg">Delete</button>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+      <!--/contacts list-->
+    </div>
+  </div>
+</div>
+
