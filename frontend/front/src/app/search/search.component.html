@@ -1,0 +1,41 @@
+<div class="container">
+
+  <h1>Search Contacts</h1>
+  <form (ngSubmit)="!contactForm2.invalid && search()" #contactForm2="ngForm">
+
+    <fieldset class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" [(ngModel)]="name" #nameValidation="ngModel" name="name"
+              pattern="[a-zA-Z\s]+"/>
+      <div *ngIf="nameValidation.dirty && nameValidation.invalid">
+        <br>
+        <p class="alert alert-warning" style="font-size: 10px; display: inline-block">Please Enter A Valid Name</p>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control" [(ngModel)]="lastName" #lastNameValidation="ngModel" name="name"
+             pattern="[a-zA-Z\s]+"/>
+      <div *ngIf="lastNameValidation.dirty && lastNameValidation.invalid">
+        <br>
+        <p class="alert alert-warning" style="font-size: 10px; display: inline-block">Please Enter A Valid Last Name</p>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label>Phone Number</label>
+      <input type="text" class="form-control" [(ngModel)]="phoneNumber" #phoneNumberValidation="ngModel" name="name"
+             pattern="[a-zA-Z\s]+"/>
+      <div *ngIf="phoneNumberValidation.dirty && phoneNumberValidation.invalid">
+        <br>
+        <p class="alert alert-warning" style="font-size: 10px; display: inline-block">Please Enter A Valid Phone Number</p>
+      </div>
+    </fieldset>
+
+
+    <button class="btn btn-primary">Search</button>
+
+  </form>
+</div>
+

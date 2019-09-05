@@ -1,0 +1,35 @@
+<div class="container">
+  <div *ngIf="deleteUnsuccessful">
+    <p class="alert alert-warning">Delete Unsuccessful</p>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let contact of contacts; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{contact.name}}</td>
+      <td>{{contact.lastName}}</td>
+      <td>{{contact.phoneNumber}}</td>
+      <td>
+        <button class="btn btn-success" style="width: 100px;"
+                (click)="editContact(contact.id, contact.name, contact.lastName, contact.phoneNumber)">Edit
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-danger" style="width: 100px" (click)="deleteContact(contact.id, contact.username)">
+          Delete
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -3,6 +3,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class Contact {
 
   constructor(
+    public username?: string,
     public name?: string,
     public lastName?: string,
     public phoneNumber?: string,
@@ -31,9 +32,7 @@ export class ContactComponent implements OnInit {
 
   checked = false;
 
-  constructor(
-    public contact: Contact
-  ) {
+  constructor() {
   }
 
   ngOnInit() {

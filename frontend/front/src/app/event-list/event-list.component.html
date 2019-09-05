@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Event</th>
+    <th scope="col">Date</th>
+    <th scope="col">Time</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let contactEvent of contacsEvents; let i = index">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{contactEvent.name}}</td>
+    <td>{{contactEvent.date}}</td>
+    <td>{{getTime(contactEvent)}}</td>
+  </tr>
+  </tbody>
+</table>

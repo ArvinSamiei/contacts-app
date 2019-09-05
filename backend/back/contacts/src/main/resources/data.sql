@@ -1,0 +1,5 @@
+-- insert into contact values (1001, 'arvin', 'arvin', 'samiei', '09120140652')
+-- insert into contact values (1002, 'arvin', 'arman', 'samiei', '09120140653')
+insert into contact  (id, username, name, last_name, phone_number) values (1003, 'arvin', 'ali', 'alavi', '09120140654')
+insert into contact  (id, username, name, last_name, phone_number) values (1002, 'arvin', 'arman', 'samiei', '09120140653')
+insert into contact  (id, username, name, last_name, phone_number) values (1001, 'arvin', 'arvin', 'samiei', '09120140652')

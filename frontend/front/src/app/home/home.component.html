@@ -1,1 +1,5 @@
-<app-login *ngIf="true"></app-login>
+<app-login *ngIf="!isLoggedIn()"></app-login>
+<div *ngIf="isLoggedIn()" style="width: 700px; margin: auto">
+  <br>
+  <h1 class="bg-info">You can manage your contacts <a style="color: red; cursor: pointer" (click)="goToContacts()">here</a></h1>
+</div>

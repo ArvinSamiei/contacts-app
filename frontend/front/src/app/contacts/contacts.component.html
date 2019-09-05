@@ -1,39 +1,87 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+<!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons"-->
+<!--      rel="stylesheet">-->
+<!--<div class="container" style="margin-top: 5px">-->
+<!--<div class="scrollbar container" id="style-2">-->
+<!--  &lt;!&ndash; contacts card &ndash;&gt;-->
+<!--  <div class="card card-default" id="card_contacts">-->
+<!--    <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">-->
+<!--      <ul class="list-group pull-down">-->
+<!--        <li class="list-group-item active" *ngFor="let contact of contacts"-->
+<!--            title="{{ fullName(contact.name, contact.lastName) }}" value="{{ fullName(contact.name, contact.lastName) }}">-->
+<!--          <div class="row w-100">-->
+<!--            <div class="col-12 col-sm-6 col-md-3 px-0">-->
+<!--              <img  alt="{{ fullName(contact.name, contact.lastName) }}"-->
+<!--                   style="width: 150px;">-->
+<!--            </div>-->
+<!--            <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">-->
+<!--              <span class="material-icons" id="{{ fullName(contact.name, contact.lastName) }}">person</span>-->
+<!--              <label class="name lead"-->
+<!--                     for="{{ fullName(contact.name, contact.lastName) }}">{{ fullName(contact.name, contact.lastName) }}</label>-->
+<!--              <br>-->
 
-<div class="scrollbar container" id="style-2">
-  <!-- contacts card -->
-  <div class="card card-default" id="card_contacts">
-    <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
-      <ul class="list-group pull-down">
-        <li class="list-group-item active" *ngFor="let contactComponent of contacts"
-            title="{{ contactComponent.contact.fullName() }}" value="{{ contactComponent.contact.fullName() }}">
-          <div class="row w-100">
-            <div class="col-12 col-sm-6 col-md-3 px-0">
-              <img src="{{ contactComponent.contact.imagePath() }}" alt="{{ contactComponent.contact.fullName() }}"
-                    style="width: 150px;">
-            </div>
-            <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">
-              <span class="material-icons" id="{{ contactComponent.contact.fullName() }}">person</span>
-              <label class="name lead"
-                     for="{{ contactComponent.contact.fullName() }}">{{ contactComponent.contact.fullName() }}</label>
-              <br>
+<!--              <span class="material-icons" id="{{ contact.phoneNumber }}">phone</span>-->
+<!--              <label class="name lead"-->
+<!--                     for="{{ contact.phoneNumber }}">{{ contact.phoneNumber }}</label>-->
 
-              <span class="material-icons" id="{{ contactComponent.contact.phoneNumber }}">phone</span>
-              <label class="name lead"
-                     for="{{ contactComponent.contact.phoneNumber }}">{{ contactComponent.contact.phoneNumber }}</label>
-            </div>
 
-            <div>
-              <button type="button" class="btn btn-success btn-lg">Edit</button>
-              <button type="button" class="btn btn-danger btn-lg">Delete</button>
-            </div>
-          </div>
-        </li>
+<!--              <br>-->
+<!--              <button type="button" class="btn btn-success btn-lg" style="width: 100px;" (click)="editContact(contact.id, contact.name, contact.lastName, contact.phoneNumber)">Edit</button>-->
+<!--              <button type="button" class="btn btn-danger btn-lg" style=" width: 100px; margin-left: 5px;">Delete-->
+<!--              </button>-->
 
-      </ul>
-      <!--/contacts list-->
-    </div>
+<!--            </div>-->
+
+
+<!--          </div>-->
+<!--        </li>-->
+
+<!--      </ul>-->
+<!--      &lt;!&ndash;/contacts list&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div style="margin-top: 5px">-->
+<!--  <button style="margin: auto" class="btn btn-primary">Add Contact</button>-->
+<!--</div>-->
+
+<!--</div>-->
+
+
+<div class="container">
+  <div *ngIf="deleteUnsuccessful">
+    <p class="alert alert-warning">Delete Unsuccessful</p>
   </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let contact of contacts; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{contact.name}}</td>
+      <td>{{contact.lastName}}</td>
+      <td>{{contact.phoneNumber}}</td>
+      <td>
+        <button class="btn btn-success" style="width: 100px;"
+                (click)="editContact(contact.id, contact.name, contact.lastName, contact.phoneNumber)">Edit
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-danger" style="width: 100px" (click)="deleteContact(contact.id, contact.username)">
+          Delete
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" (click)="addContact()">Add Contact</button>
+  <button style="margin-left: 5px;" class="btn btn-primary" (click)="searchContact()">Search Contacts</button>
 </div>
-

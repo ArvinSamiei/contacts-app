@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.hardcodedAuthenticationService.authenticate(this.username, this.password)) {
-      this.router.navigate(['contacts']);
+      this.router.navigate(['users', this.username, 'contacts']);
     } else {
       this.loginFailed = true;
     }

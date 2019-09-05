@@ -10,6 +10,11 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactComponent } from './contact/contact.component';
+import { ManageContactComponent } from './manage-contact/manage-contact.component';
+import {HttpClientModule} from '@angular/common/http';
+import { EventListComponent } from './event-list/event-list.component';
+import { SearchComponent } from './search/search.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +24,17 @@ import { ContactComponent } from './contact/contact.component';
     FooterComponent,
     HomeComponent,
     ContactsComponent,
-    ContactComponent
+    ContactComponent,
+    ManageContactComponent,
+    EventListComponent,
+    SearchComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
